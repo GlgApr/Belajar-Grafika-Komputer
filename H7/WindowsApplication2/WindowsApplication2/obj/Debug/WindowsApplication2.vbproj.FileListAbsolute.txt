@@ -1,0 +1,10 @@
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\bin\Debug\WindowsApplication2.exe.config
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.Form1.resources
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.Resources.resources
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.vbproj.GenerateResource.Cache
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\bin\Debug\WindowsApplication2.exe
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\bin\Debug\WindowsApplication2.pdb
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\bin\Debug\WindowsApplication2.xml
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.exe
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.xml
+D:\Kuliah\Semester 4\Praktikum\Grafkom\Tugas Besar\WindowsApplication2\WindowsApplication2\obj\Debug\WindowsApplication2.pdb

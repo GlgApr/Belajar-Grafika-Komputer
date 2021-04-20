@@ -1,0 +1,304 @@
+#include<stdlib.h> 
+#include<glut.h> 
+float z_pos = -10.0f;  float rot = 0.0f;
+float y_pos = 0.0f; float x_pos = 0.0f;
+float x_rot = 0.0f; float y_rot = 0.0f;
+float z_rot = 0.0f;
+void resize(int width, int height)
+{
+	glViewport(0, 0, width, height);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(160, (float)width / (float)height, 1.0, 300.0);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+}
+
+void putaran(int id)
+{
+	rot += 0;
+	glutPostRedisplay();  // request redisplay
+	glutTimerFunc(100, putaran, 0);  // request next timer event
+}
+
+
+void keyboardku(unsigned char key, int x, int y)
+{
+	if ((key == '<') || (key == ',')) z_pos -= 0.1f;
+	if ((key == '>') || (key == '.')) z_pos += 0.1f;
+	if ((key == 's') || (key == 'S')) y_pos -= 0.1f;
+	if ((key == 'w') || (key == 'W')) y_pos += 0.1f;
+	if ((key == 'a') || (key == 'A')) x_pos -= 0.1f;
+	if ((key == 'd') || (key == 'D')) x_pos += 0.1f;
+	if ((key == 'x') || (key == 'X')) //Rotasi sumbu x kanan
+	{
+		x_rot = 1.0f;
+		y_rot = 0.0f;
+		z_rot = 0.0f;
+		rot += 10;
+	}
+}
+
+void mydisplay(void)
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glLoadIdentity();
+	glTranslatef(x_pos, y_pos, z_pos);
+	glRotatef(rot, x_rot, y_rot, z_rot);
+
+	// sisi kirir
+	glColor3f(0, 1, 1);
+	glBegin(GL_POLYGON);
+	glVertex3f(3, -4, 0);
+	glVertex3f(3, -6, 0);
+	glVertex3f(3, -4, 3);
+	glVertex3f(3, -6, 3);
+	glEnd();
+
+	//// sisi kanan
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-2, -5, 5);
+	//glVertex3f(-2, -6, 5);
+	//glVertex3f(-1, -6, 5);
+	//glVertex3f(-1, -5, 5);
+	//glEnd();
+
+	//glColor3f(0, 1, 1);//shape1
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-2, -5, 0);
+	//glVertex3f(-2, -6, 0);
+	//glVertex3f(-2, -6, 5);
+	//glVertex3f(-2, -5, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-2, -6, 0);
+	//glVertex3f(-1, -6, 0);
+	//glVertex3f(-1, -6, 5);
+	//glVertex3f(-2, -6, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-1, -6, 0);
+	//glVertex3f(-1, -5, 0);
+	//glVertex3f(-1, -5, 5);
+	//glVertex3f(-1, -6, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-1, -5, 0);
+	//glVertex3f(-2, -5, 0);
+	//glVertex3f(-2, -5, 5);
+	//glVertex3f(-1, -5, 5);
+	//glEnd();
+
+
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);//alas2
+	//glVertex3f(-2, -10, 0);
+	//glVertex3f(-1, -11, 0);
+	//glVertex3f(-1, -11, 0);
+	//glVertex3f(-2, -10, 0);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-2, -10, 5);
+	//glVertex3f(-1, -10, 5);
+	//glVertex3f(-1, -11, 5);
+	//glVertex3f(-2, -11, 5);
+	//glEnd();
+
+	//glColor3f(0, 1, 1);//shape2
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-2, -10, 0);
+	//glVertex3f(-1, -10, 0);
+	//glVertex3f(-1, -10, 5);
+	//glVertex3f(-2, -10, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-1, -10, 0);
+	//glVertex3f(-1, -11, 0);
+	//glVertex3f(-1, -11, 5);
+	//glVertex3f(-1, -10, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-1, -11, 0);
+	//glVertex3f(-2, -11, 0);
+	//glVertex3f(-2, -11, 5);
+	//glVertex3f(-1, -11, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-2, -11, 0);
+	//glVertex3f(-2, -10, 0);
+	//glVertex3f(-2, -10, 5);
+	//glVertex3f(-2, -11, 5);
+	//glEnd();
+
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);//alas3
+	//glVertex3f(7, -5, 0);
+	//glVertex3f(7, -6, 0);
+	//glVertex3f(8, -6, 0);
+	//glVertex3f(8, -5, 0);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(7, -5, 5);
+	//glVertex3f(7, -6, 5);
+	//glVertex3f(8, -6, 5);
+	//glVertex3f(8, -5, 5);
+	//glEnd();
+
+	//glColor3f(0, 1, 1);//shape3
+	//glBegin(GL_POLYGON);
+	//glVertex3f(7, -5, 0);
+	//glVertex3f(7, -6, 0);
+	//glVertex3f(7, -6, 5);
+	//glVertex3f(7, -5, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(7, -6, 0);
+	//glVertex3f(8, -6, 0);
+	//glVertex3f(8, -6, 5);
+	//glVertex3f(7, -6, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(8, -6, 0);
+	//glVertex3f(8, -5, 0);
+	//glVertex3f(8, -5, 5);
+	//glVertex3f(8, -6, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(8, -5, 0);
+	//glVertex3f(7, -5, 0);
+	//glVertex3f(7, -5, 5);
+	//glVertex3f(8, -5, 5);
+	//glEnd();
+
+
+	//glColor3f(1, 0, 0);
+	//glBegin(GL_POLYGON);//alas4
+	//glVertex3f(7, -10, 0);
+	//glVertex3f(8, -10, 0);
+	//glVertex3f(8, -11, 0);
+	//glVertex3f(7, -11, 0);
+	//glEnd();
+	//glColor3f(1, 0, 0);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(7, -10, 5);
+	//glVertex3f(8, -10, 5);
+	//glVertex3f(8, -11, 5);
+	//glVertex3f(7, -11, 5);
+	//glEnd();
+
+	//glColor3f(1, 0, 0);//shape4
+	//glBegin(GL_POLYGON);
+	//glVertex3f(7, -10, 0);
+	//glVertex3f(8, -10, 0);
+	//glVertex3f(8, -10, 5);
+	//glVertex3f(7, -10, 5);
+	//glEnd();
+	//glColor3f(1, 0, 0);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(8, -10, 0);
+	//glVertex3f(8, -11, 0);
+	//glVertex3f(8, -11, 5);
+	//glVertex3f(8, -10, 5);
+	//glEnd();
+	//glColor3f(1, 0, 0);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(8, -11, 0);
+	//glVertex3f(7, -11, 0);
+	//glVertex3f(7, -11, 5);
+	//glVertex3f(8, -11, 5);
+	//glEnd();
+	//glColor3f(1, 0, 0);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(7, -11, 0);
+	//glVertex3f(7, -10, 0);
+	//glVertex3f(7, -10, 5);
+	//glVertex3f(7, -11, 5);
+	//glEnd();
+
+	//glColor3f(1, 1, 1);
+	//glBegin(GL_POLYGON);//alas5
+	//glVertex3f(-2, -5, 5);
+	//glVertex3f(8, -5, 5);
+	//glVertex3f(8, -11, 5);
+	//glVertex3f(-2, -11, 5);
+	//glEnd();
+	//glColor3f(1, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-2, -5, 6);
+	//glVertex3f(8, -5, 6);
+	//glVertex3f(8, -11, 6);
+	//glVertex3f(-2, -11, 6);
+	//glEnd();
+
+	//glColor3f(0, 1, 1);//shape5
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-2, -5, 5);
+	//glVertex3f(8, -5, 5);
+	//glVertex3f(8, -5, 5);
+	//glVertex3f(-2, -5, 5);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(8, -5, 5);
+	//glVertex3f(8, -11, 5);
+	//glVertex3f(8, -11, 6);
+	//glVertex3f(8, -5, 6);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(8, -5, 5);
+	//glVertex3f(-2, -5, 5);
+	//glVertex3f(-2, -5, 6);
+	//glVertex3f(8, -5, 6);
+	//glEnd();
+	//glColor3f(0, 1, 1);
+	//glBegin(GL_POLYGON);
+	//glVertex3f(-2, -5, 5);
+	//glVertex3f(-2, -11, 5);
+	//glVertex3f(-2, -11, 6);
+	//glVertex3f(-2, -5, 6);
+	//glEnd();
+
+	glFlush();
+	glutSwapBuffers();
+}
+
+void init() {
+	glEnable(GL_DEPTH_TEST);
+	glClearColor(1.0, 1.0, 1.0, 1.0);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(45, (GLdouble)500.0 / (GLdouble)500.0, 0, 100);
+	glMatrixMode(GL_MODELVIEW);
+	return;
+}
+
+int main(int argc, char** argv)
+{
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
+	glutInitWindowSize(800, 800);
+	glutInitWindowPosition(0, 0);
+	glutCreateWindow("Galang Aprilian");
+	glutDisplayFunc(mydisplay);
+	glutTimerFunc(100, putaran, 0);
+	glutKeyboardFunc(keyboardku);
+	glutReshapeFunc(resize);
+	init();
+	glutMainLoop();
+	return 0;
+}
+
